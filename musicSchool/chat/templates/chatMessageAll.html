@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% block title %}Все Сообщения{% endblock  %} 
+
+
+
+{% block content %}
+
+
+<h2>Здесь будет выводиться имена пользователя</h2>
+<p>{{name}}</p>
+    <table>
+        <tr>
+            <td>Имя</td><td>Дата</td>
+        </tr>
+        {% for chatMessage in chatMessageAll %}
+        <tr>
+            <td><a href="/chatMessage/{{ chatMessage.id }}">{{ chatMessage.name }}</a></td><td>{{ chatMessage.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+ {% endblock  %} 

@@ -16,11 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from registration import views as v
-
+from chat import views as views
 
 urlpatterns = [
-    path('school/', include('school.urls')),
+    path('school', include('school.urls')),
+    path('chat', views.chat, name='chat'),
+    path('ind', views.ind, name='ind'),
+#    path('chatMessage/<int:number>', views.chatMessage, name='chatMessage'),
+    path('chatMessageAll', views.chatMessageAll, name='chatMessageAll'),    
+#    path('chatInput', views.chatInput, name='chatInput'),
+
     path('registration/', v.registrationPage, name='registration'),
     path('login/', v.loginPage, name='login'),
     path('admin/', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls')),
+
+#    path('timetable/', include('timetable.urls')),
 ]

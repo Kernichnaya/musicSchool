@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'pvz4c29d=+x_h-8aka8#!vj1dvu*rw*!t-=sq!y-7bb)0z3lwu'
+SECRET_KEY = '12345'# pvz4c29d=+x_h-8aka8#!vj1dvu*rw*!t-=sq!y-7bb)0z3lwu
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -32,7 +32,10 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'school',
+    'timetable',
     'registration',
+    'chat',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -120,3 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+
+APPEND_SLASH=False#было добавленно мной

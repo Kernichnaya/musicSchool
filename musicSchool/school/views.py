@@ -20,9 +20,3 @@ def index(request):
 #    success_url = reverse_lazy('edit_page')
 #    def get_success_url(self):
 #        return self.success_url
-
-def login(request):
-    return render(
-        request, 
-        'login.html',
-    )
