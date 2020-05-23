@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from registration import views as v
+<<<<<<< HEAD
 from chat import views as views
 
 urlpatterns = [
@@ -28,6 +29,12 @@ urlpatterns = [
 
     path('registration/', v.registrationPage, name='registration'),
     path('login/', v.loginPage, name='login'),
+=======
+
+urlpatterns = [
+    path('school/', include('school.urls')),
+    path('registration/', v.registration, name='registration'),  
+>>>>>>> 9fd7f1660f677d3310da13082a0324890bdebbf6
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
 

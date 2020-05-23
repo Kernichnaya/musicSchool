@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from datetime import datetime
 from django.conf import settings
 from django.utils import timezone
@@ -188,3 +189,8 @@ def chatMessageAll(request):
 
 
 '''
+=======
+from django.shortcuts import render
+
+# Create your views here.
+>>>>>>> 9fd7f1660f677d3310da13082a0324890bdebbf6

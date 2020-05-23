@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render, redirect 
 from django.http import HttpResponse
 from django.forms import inlineformset_factory
@@ -52,3 +53,12 @@ def loginPage(request):
 def logoutUser(request):
 	logout(request)
 	return redirect('login')
+=======
+from django.shortcuts import render
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserChangeForm
+
+def registration(response):
+    form = UserChangeForm()
+    return render(response, 'registration/registration.html', {'form':form})
+>>>>>>> 9fd7f1660f677d3310da13082a0324890bdebbf6
