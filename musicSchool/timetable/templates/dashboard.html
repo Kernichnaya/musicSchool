@@ -1,0 +1,75 @@
+{%  extends 'main.html' %}
+
+{% block content %}
+
+<br>
+<a class="btn btn-primary" href="{% url 'chat/' %}" role="button">Отправить сообщение</a>
+
+<a class="btn btn-primary" href="status/" role="button">Преподаватели</a>
+
+<a class="btn btn-primary" href="/logout/" role="button">Выход</a>
+<br><br>
+<div class="row">
+	<div class="col-md-5">
+		<h5>УЧЕНИКИ ШКОЛЫ:</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="">Анкета</a>
+			<table class="table table-sm">
+				<tr>
+					<th>Фамилия</th>
+					<th>Имя</th>
+					<th>Возраст</th>
+					<th>Телефон</th>
+					<th>Email</th>
+				</tr>
+
+				{% for customer in customers %}
+					<tr>
+						<td>{{customer.surname}}</td>
+						<td>{{customer.name}}</td>
+						<td>{{customer.age}}</td>
+						<td>{{customer.phone}}</td>
+						<td>{{customer.email}}</td>
+					</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div><br>
+
+		<br>
+	<div class="col-md-7">
+		<h5>ВЫБОР УРОКА</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="{% url 'create_order' %}">Записаться на урок</a>
+			<table class="table table-sm">
+				<tr>
+					<th>Преподователь</th>
+					<th>Дата Записи</th>
+					<th>Дата Занятия</th>
+					<th>Изменить</th>
+					<th>Удалить</th>
+				</tr>
+
+				{% for order in orders %}
+					<tr>
+						<td>{{order.product}}</td>
+						<td>{{order.date_created}}</td>
+						<td>{{order.status}}</td>
+						<td><a class="btn btn-sm btn-info" href="{% url 'update_order' order.id %}">Изменить</a></td>
+
+						<td><a class="btn btn-sm btn-danger" href="{% url 'delete_order' order.id %}">Удалить</a></td>
+
+					</tr>
+				{% endfor %}
+
+		
+			</table>
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}

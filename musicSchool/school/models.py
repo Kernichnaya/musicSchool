@@ -1,8 +1,10 @@
 from django.db import models
-from django.forms import ModelForm
-from registration.form import CreateUserForm
 
 from django.forms import ModelForm
+from registration.form import CreateUserForm
+from django.contrib.auth.models import User
+from django.forms import ModelForm 
+from django.urls import reverse
 
 class Teacher(models.Model):
     teacher_name = models.CharField(max_length=100)
@@ -32,11 +34,13 @@ class Student(models.Model):
 
 class Message(models.Model):
     date = models.DateTimeField()
-    text_message = models.CharField(max_length=500)
-    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
-
-
-
+    title = models.CharField(max_length=50)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    body = models.CharField(max_length=50)
+    def __str__(self):
+		    return self.title + ' | ' + str(self.author)
+    def get_absolute_url (self):
+        return reverse('ind')
 
 class MessageTest(models.Model):
     name = models.CharField(max_length=30)

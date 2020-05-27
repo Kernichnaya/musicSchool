@@ -1,0 +1,43 @@
+ 
+{%  extends 'main.html' %}
+{% load static %}
+{% block content %}
+<style>
+
+    nav { 
+        margin-left: 6%;
+    }
+	input{ 
+        margin-left: 76%;
+    }
+   </style>
+<nav class="nav">
+	<a class="nav-link disabled" href="#">Ученик</a>
+	<a class="nav-link disabled" href="#"></a>
+	<a class="nav-link disabled" href="#"></a>
+	<a class="nav-link disabled" href="#"></a>
+	<a class="nav-link disabled" href="#"></a>
+	<a class="nav-link disabled" href="#">Преподаватель</a>
+	<a class="nav-link disabled" href="#"></a>
+	<a class="nav-link disabled" href="#">Время</a>
+  </nav>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="card card-body">
+			
+			<form action="" method="POST">
+				
+				{% csrf_token %}
+				{{form}}
+				
+				<input type="submit" name="Submit">
+			</form>
+
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
+© 2020 GitHub, Inc.

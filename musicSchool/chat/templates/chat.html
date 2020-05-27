@@ -1,118 +1,33 @@
 {% extends 'base.html'%}
 
-
 {% block title %}Чат{% endblock  %} 
 
 
-
-{% block content %}
-<!--    <h2>Здесь будет Чат пользователя</h2>
-    
-
-    <h3>Пользователь {{user}}</h3>
-
-<form method="post" action="">
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Выберите преподователя
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        {%for teacher in posts%}
-          <a class="dropdown-item" href="#">{{ teacher.teacher_name }}</a>
-        {%endfor%}
-        
-        </div>
-        <button type="button" class="btn btn-secondary">Отправить</button>
-      </div>
-          <input type="submit" value="Submit"> 
-              <label for="exampleFormControlSelect1">Написать: {{ movie.teacher_name }}</label>
-    </form>
--->
+{% block content %}    
+<style>
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: #7abecc !important;
+    }
+    div { 
+        margin-left: 5%;
+    }
+   </style>
 <body>
-    <h3>Пользователь {{user}}</h3>
-    <form method="post" action="">
-    <div>
-    <div class="form-group">
-        <label for="exampleFormControlSelect1">Список</label>
-        <select name="teacher_name">
-            <option disabled="true">Выберите преподователя</option>
-            {%for teacher in posts%}
-            <option>{{ teacher.teacher_name }}</option>
-            {%endfor%}
-        </select>
-
-
-        <h2>Ввод Сообщений</h2>
-
     
-
-    
-
-        <form method="post" action="">{% csrf_token %}
-    
-            </br>
-            <textarea name="text_message" placeholder="Текст"></textarea>>
-            </br>
-            <button type="submit">Отправить</button>
-        
-        
-        </form>
-    </tr>
-    {% for chat in chat %}
-    <tr>
-        <td><a></a>{{ chat.teacher }}</a></td><td>{{ chat.date }}</td><td>{{ chat.text_message }}</td>
-    </tr>
-    {% endfor %}
-        {% endblock  %} 
-
-
-    </div>
-
-
-    </div>
-
-    </form>
+<br>
+<ul>
+{% for message in object_list%}
+    <li><h5>{{ message.date }}
+     {{ message.title }}
+     {{ message.author }}
+     {{ message.body }}
+ {%endfor%} </h5> </li>
+</ul>
+ 
+{% endblock %}
 </body>
 
-
-
-
-    
-
-<!--
-
-
-
-<h2> Запись </h2>
-<form method="post" action="/chat/">}
-    </br>
-    <input type="text" name="secret" placeholder="secret Key"/>
-    </br>
-    </br>
-    <input type="text" name="name" placeholder="Название"/>
-    </br>
-    <textarea placeholder="Текст"></textarea>>
-    </br>
-    <button type="submit">Отправить</button>
-
-
-</form>
-
-
-
-<form action="/your-name/" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Отправить">
-</form>
-
-
-
-
-<input class="btn btn-primary" type="submit" value="Submit">
-
-</div>
-<div class="form-group">
-  <label for="exampleFormControlTextarea1">Example textarea</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-</div>-->

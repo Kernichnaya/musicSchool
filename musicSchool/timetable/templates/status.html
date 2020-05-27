@@ -1,0 +1,45 @@
+<div>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style>
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background: #7abecc !important;
+		}
+		a { 
+			margin-left: 1%;
+		}
+	   </style>
+<body>	
+	<div><br>
+	<a class="btn btn-primary" href="/" role="button">Вернуться в главное меню</a>
+	<br><br></div>
+	{%for teacher in posts%}
+	
+	<div class="row">
+		<div class="col">
+			<div class="col-md">
+				<div class="card text-center text-black  mb-3" id="total-orders">
+					  <div class="card-header">
+						  <h5 class="card-title">Преподователь</h5>
+					  </div>
+					<div class="card-body">
+				<h5 class="card-title">{{ teacher.teacher_name }}</h5>
+				<p class="card-text">{{ teacher.teacher_age }}</p>
+			  </div>
+			  <ul class="list-group list-group-flush">
+				<li class="list-group-item">{{ teacher.teacher_education }}</li>
+				<li class="list-group-item">{{ teacher.teacher_information }}</li>
+			  </ul>
+				</div>
+			</div>
+		</div>
+	
+	
+		</div>
+	  </div>
+	{%endfor%}  
+	</div>
+</body>

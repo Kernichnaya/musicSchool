@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
     
@@ -72,7 +71,7 @@
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
 				<div class="d-flex justify-content-center">
-					<h3 id="form-title">REGISTER ACCOUNT</h3>
+					<h3 id="form-title">Регистрация</h3>
 				</div>
 				<div class="d-flex justify-content-center form_container">
 
@@ -106,7 +105,7 @@
 
 
 				   		<div class="d-flex justify-content-center mt-3 login_container">
-				 			<input class="btn login_btn" type="submit" value="Register Account">
+				 			<input class="btn login_btn" type="submit" value="Зарегистрироваться">
 				   		</div>
 
 					</form>
@@ -116,7 +115,7 @@
 				
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
-						Already have an account? <a href="{% url 'login' %}" class="ml-2">Login</a>
+						Уже есть аккаунт? <a href="{% url 'login' %}" class="ml-2">Войти</a>
 					</div>
 				</div>
 			</div>
@@ -129,10 +128,10 @@
 
 		//Query All input fields
 		var form_fields = document.getElementsByTagName('input')
-		form_fields[1].placeholder='Username..';
+		form_fields[1].placeholder='Имя пользователя..';
 		form_fields[2].placeholder='Email..';
-		form_fields[3].placeholder='Enter password...';
-		form_fields[4].placeholder='Re-enter Password...';
+		form_fields[3].placeholder='Введите пароль...';
+		form_fields[4].placeholder='Повторите пароль...';
 
 
 		for (var field in form_fields){	
@@ -141,14 +140,3 @@
 	</script>
 </body>
 </html>
-=======
-
-{% block title %} Create an Account{% endblock %}
-
-{% block content %}
-    <form method="POST" class="form-group">
-        {{form}}
-        <button type="submit" class="btn-success">Registration</button>
-    </form>>
-{% endblock %}
->>>>>>> 9fd7f1660f677d3310da13082a0324890bdebbf6

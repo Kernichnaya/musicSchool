@@ -1,3 +1,35 @@
 from django.urls import path
 
-from.import views
+from . import views
+from django.urls import path
+
+from . import views
+'''
+#rest of the urls after 'mainapp/' will be matched here
+urlpatterns=[
+	#calling mainview from here 
+	path('', views.mainview, name='mainurl'),
+	
+	#showing received data
+	path('show/', views.showview, name='showurl'),
+	
+]
+'''
+
+
+from django.urls import path
+from . import views
+
+
+urlpatterns = [
+    path('', views.home, name="home"),
+    path('products/', views.products, name='products'),
+    path('customer/<str:pk_test>/', views.customer, name="customer"),
+
+    path('status/', views.status, name="status" ),
+    path('create_order/', views.createOrder, name="create_order"),
+    path('update_order/<str:pk>/', views.updateOrder, name="update_order"),
+    path('delete_order/<str:pk>/', views.deleteOrder, name="delete_order"),
+
+
+]

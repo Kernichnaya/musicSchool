@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from django.shortcuts import render, redirect 
 from django.http import HttpResponse
 from django.forms import inlineformset_factory
@@ -33,7 +32,7 @@ def registrationPage(request):
 
 def loginPage(request):
 	if request.user.is_authenticated:
-		return redirect('/school')#
+		return redirect('/')#
 	else:
 		if request.method == 'POST':
 			username = request.POST.get('username')
@@ -43,22 +42,13 @@ def loginPage(request):
 
 			if user is not None:
 				login(request, user)
-				return redirect('/school')#
+				return redirect('/')#
 			else:
-				messages.info(request, 'Username OR password is incorrect')
+				messages.info(request, 'Неверный логин или пароль')
 
 		context = {}
 		return render(request, 'login/login.html', context)
 
 def logoutUser(request):
 	logout(request)
-	return redirect('login')
-=======
-from django.shortcuts import render
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserChangeForm
-
-def registration(response):
-    form = UserChangeForm()
-    return render(response, 'registration/registration.html', {'form':form})
->>>>>>> 9fd7f1660f677d3310da13082a0324890bdebbf6
+	return redirect('/school')
