@@ -12,7 +12,6 @@ class Teacher(models.Model):
     teacher_education = models.CharField(max_length=300)
     teacher_information = models.CharField(max_length=600)
     
-#    object = models.manager()
     class Meta:
 
         ordering =['teacher_name']
@@ -47,26 +46,3 @@ class MessageTest(models.Model):
     date = models.DateTimeField()
     text = models.CharField(max_length=500)
 
-
-'''
-from django.db import models
-from django.forms import ModelForm
-from registration.form import CreateUserForm
-from django.contrib.auth.models import User
-from chat.views import chat 
-from school.models import Teacher
-from registration.form import CreateUserForm
-
-
-class Message(models.Model):
-    name = CreateUserForm.Meta.model()
-    date = models.DateTimeField()
-    text = models.CharField(max_length=500)
-    name_teacher = models.ForeignKey('Teacher', on_delete=models.SET_NULL, null=True)
-
-
-class Message(models.Model):
-    name = models.CharField(max_length=30)
-    date = models.DateTimeField()
-    text = models.CharField(max_length=500)
-'''

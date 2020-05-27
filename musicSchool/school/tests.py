@@ -27,13 +27,3 @@ class TeatModels(TestCase):
             student_phone = '+79293718254',
        )
 
-'''
-    def test_timetable(self):
-        timetable1 = Timetable.objects.get(
-            TIMETABLE_WEEK = [
-            ('Понедельник', (
-            ('10:00', '10:00')
-                    ))],
-        timetable_week = '',(choices=TIMETABLE_WEEK)
-    )
-    '''

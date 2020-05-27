@@ -1,23 +1,4 @@
 from django.urls import path
-
-from . import views
-from django.urls import path
-
-from . import views
-'''
-#rest of the urls after 'mainapp/' will be matched here
-urlpatterns=[
-	#calling mainview from here 
-	path('', views.mainview, name='mainurl'),
-	
-	#showing received data
-	path('show/', views.showview, name='showurl'),
-	
-]
-'''
-
-
-from django.urls import path
 from . import views
 
 

@@ -32,39 +32,8 @@ class AssMessageView(CreateView):
     model = Message 
     template_name = 'ind.html'
     fields = '__all__'
-'''
-def chat(request, pk):
-    if request.method == 'GET':
-        return render( request, 'chat.html',
-            {
-                'posts': Teacher.objects.all(),
-            }
-        )
-    else:
-        print(request.POST)
-        message = Message.objects.get(id=pk)
-        teacher = request.POST['teacher_name']
-        text_message = request.POST.get('text_message', False)
-        Message(
-            date = timezone.now(),
-            text_message = text_message,
-            teacher = Teacher.objects.get(id=pk)
-        ).save()
-        return render( 
-            request,
-            'chat.html',
-        {
-        'chat': Message.objects.all()
-        })
 
-  '''
 def ind(request):
     return render( request, 'ind.html')
 
-
-
-def chatMessageAll(request):
-    return render( request, 'chatMessageAll.html', {
-        'chatMessageAll': MessageTest.objects.all()
-    })
 

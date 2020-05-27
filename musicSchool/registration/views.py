@@ -14,7 +14,7 @@ from .form import CreateUserForm
 
 def registrationPage(request):
 	if request.user.is_authenticated:
-		return redirect('/school')#
+		return redirect('/')#
 	else:
 		form = CreateUserForm()
 		if request.method == 'POST':
@@ -32,7 +32,7 @@ def registrationPage(request):
 
 def loginPage(request):
 	if request.user.is_authenticated:
-		return redirect('/')#
+		return redirect('/timetable/')#
 	else:
 		if request.method == 'POST':
 			username = request.POST.get('username')
@@ -42,7 +42,7 @@ def loginPage(request):
 
 			if user is not None:
 				login(request, user)
-				return redirect('/')#
+				return redirect('/timetable/')#
 			else:
 				messages.info(request, 'Неверный логин или пароль')
 
@@ -51,4 +51,4 @@ def loginPage(request):
 
 def logoutUser(request):
 	logout(request)
-	return redirect('/school')
+	return redirect('/')

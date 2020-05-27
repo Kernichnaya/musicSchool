@@ -8,7 +8,7 @@
         margin-left: 6%;
     }
 	input{ 
-        margin-left: 76%;
+        margin-left: 10%;
     }
    </style>
 <nav class="nav">
@@ -30,8 +30,8 @@
 				
 				{% csrf_token %}
 				{{form}}
+			<a type="submit"  href="{% url 'home' %}">Отмена</a> <input type="submit" name="Submit">
 				
-				<input type="submit" name="Submit">
 			</form>
 
 		</div>
@@ -40,4 +40,3 @@
 
 
 {% endblock %}
-© 2020 GitHub, Inc.
